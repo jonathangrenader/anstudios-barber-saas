@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="ANSTUDIOS">
+  <rect width="512" height="512" rx="96" fill="#1E3A2F" />
+  <rect x="32" y="32" width="448" height="448" rx="72" fill="none" stroke="#141413" stroke-width="12" />
+  <g fill="none" stroke="#F7F5F0" stroke-width="22" stroke-linecap="round">
+    <circle cx="196" cy="212" r="44" />
+    <circle cx="196" cy="322" r="44" />
+    <path d="M228 240 L376 372" />
+    <path d="M228 294 L376 162" />
+  </g>
+</svg>

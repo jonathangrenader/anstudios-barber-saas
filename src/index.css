@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Tokens en canales RGB para conservar los modificadores de opacidad
+ * de Tailwind (`border-strong/20`, `bg-ink/40`, etc.).
+ * Modo oscuro cálido, no negro puro: mantiene la estética editorial.
+ */
+:root {
+  --c-canvas: 247 245 240;
+  --c-surface: 255 255 255;
+  --c-surface-alt: 239 236 228;
+  --c-border: 226 223 215;
+  --c-ink: 20 20 19;
+  --c-muted: 92 90 84;
+  --c-brand: 30 58 47;
+  --c-accent: 200 75 49;
+  --c-income: 21 128 61;
+  --c-income-soft: 220 252 231;
+  --c-expense: 185 28 28;
+  --c-expense-soft: 254 226 226;
+  --c-pending: 180 83 9;
+  --c-pending-soft: 254 243 199;
+  --c-shadow: #141413;
+  color-scheme: light;
+}
+
+html[data-theme='dark'] {
+  --c-canvas: 21 20 18;
+  --c-surface: 30 28 25;
+  --c-surface-alt: 41 38 34;
+  --c-border: 61 56 49;
+  --c-ink: 243 239 230;
+  --c-muted: 174 167 156;
+  --c-brand: 47 91 72;
+  --c-accent: 224 102 76;
+  --c-income: 110 214 155;
+  --c-income-soft: 23 53 33;
+  --c-expense: 240 138 128;
+  --c-expense-soft: 58 30 27;
+  --c-pending: 240 195 107;
+  --c-pending-soft: 58 44 20;
+  --c-shadow: #000000;
+  color-scheme: dark;
+}
+
+html[data-text-size='compact'] {
+  font-size: 15px;
+}
+
+html[data-text-size='large'] {
+  font-size: 17.5px;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply min-h-dvh bg-canvas font-sans text-ink antialiased;
+    transition: background-color 150ms ease, color 150ms ease;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand-primary;
+  }
+
+  img {
+    background-color: rgb(var(--c-surface-alt));
+  }
+}
+
+@layer utilities {
+  /* Montos, porcentajes y horarios: cifras alineadas en columnas. */
+  .numeric {
+    @apply font-mono tabular-nums;
+  }
+}
